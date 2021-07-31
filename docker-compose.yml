@@ -1,6 +1,6 @@
-version: '3.8'
+---
+version: "3.8"
 services:
-
   prd-vpn-server-app:
     image: docker-registry.theautomation.nl/coen/prd-vpn-server-app:latest
     container_name: prd-vpn-server-app
@@ -16,7 +16,6 @@ services:
 
 # NETWORKS
 networks:
-
   home-services:
     driver: bridge
     name: home-services
