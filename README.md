@@ -6,3 +6,7 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/theautomation/vpn-server/main?logo=github)
 
 [IPsec VPN Server](https://github.com/hwdsl2/docker-ipsec-vpn-server): a Docker image to run my own IPsec VPN server, with IPsec/L2TP, Cisco IPsec and IKEv2.
+
+## The ports that are exposed for this container to work are:
+
+4500/udp and 500/udp for IPsec also open ports to the host on the router.
