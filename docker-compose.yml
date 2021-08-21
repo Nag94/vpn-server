@@ -12,9 +12,14 @@ services:
       - "500:500/udp"
       - "4500:4500/udp"
     volumes:
-      - ./ikev2-vpn-data:/etc/ipsec.d
+      - prd-vpn-server-data:/etc/ipsec.d
     privileged: true
     hostname: prd-vpn-server-app
+
+# VOLUMES
+volumes:
+  prd-vpn-server-data:
+    name: prd-vpn-server-data
 
 # NETWORKS
 networks:
