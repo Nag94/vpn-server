@@ -7,25 +7,8 @@ services:
     restart: unless-stopped
     env_file: prd-vpn-server-app.env
     networks:
-      home-services:
+      - vpn-server
     ports:
       - "500:500/udp"
       - "4500:4500/udp"
-    volumes:
-      - prd-vpn-server-data:/etc/ipsec.d
     privileged: true
-    hostname: prd-vpn-server-app
-
-# VOLUMES
-volumes:
-  prd-vpn-server-data:
-    name: prd-vpn-server-data
-
-# NETWORKS
-networks:
-  home-services:
-    driver: bridge
-    name: home-services
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
