@@ -12,3 +12,12 @@ services:
       - "500:500/udp"
       - "4500:4500/udp"
     privileged: true
+
+# NETWORKS
+networks:
+  vpn-server:
+    driver: bridge
+    name: vpn-server
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
