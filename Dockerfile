@@ -39,4 +39,6 @@ VOLUME /etc/ipsec.d
 
 EXPOSE 4500/udp 500/udp
 
-CMD [ "/run.sh" ]
+RUN chmod +x /run.sh
+
+CMD ["/run.sh"]
