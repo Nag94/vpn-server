@@ -6,7 +6,18 @@ services:
     container_name: prd-vpn-server-app
     restart: unless-stopped
     env_file: prd-vpn-server-app.env
+    networks:
+      - home-services
     ports:
       - "500:500/udp"
       - "4500:4500/udp"
     privileged: true
+
+# NETWORKS
+networks:
+  home-services:
+    driver: bridge
+    name: home-services
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
