@@ -7,17 +7,16 @@ services:
     restart: unless-stopped
     env_file: prd-vpn-server-app.env
     networks:
-      - home-services
+      - vpn-server
     ports:
-      - "500:500/udp"
-      - "4500:4500/udp"
+      - 500:500/udp
+      - 4500:4500/udp
     privileged: true
 
-# NETWORKS
 networks:
-  home-services:
+  vpn-server:
     driver: bridge
-    name: home-services
+    name: vpn-server
     ipam:
       config:
-        - subnet: 172.20.0.0/16
+        - subnet: 172.35.0.0/16
