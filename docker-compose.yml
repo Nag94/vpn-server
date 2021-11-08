@@ -15,9 +15,9 @@ services:
     privileged: true
 
 networks:
-  vpn-server:
-    driver: bridge
+  reverse-proxy:
     name: reverse-proxy
+  vpn-server:
     driver: bridge
     name: vpn-server
     ipam:
